@@ -1,13 +1,14 @@
 import express from 'express';
 import router from './src/controllers/image.controller';
 import cors from 'cors';
+import {config} from 'dotenv';
+
+config();
 
 const app = express();
 const PORT = process.env.PORT ?? 3100;
 
-app.use(cors({
-  origin: process.env.FRONTEND_URL,
-}));
+app.use(cors());
 
 app.use(express.json())
 
